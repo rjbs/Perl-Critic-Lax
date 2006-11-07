@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::RequireEndWithTrueConst
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
@@ -32,7 +32,7 @@ Patches welcome.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 my $DESCRIPTION = q{Module does not end with true constant};
 my $EXPLANATION = q{Must end with a recognizable true value};

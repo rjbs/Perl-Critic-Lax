@@ -1,4 +1,7 @@
 
+0.003    2006-11-07
+         added ProhibitEmptyQuotes::ExceptAsFallback
+
 0.002    2006-11-07
          added RequireEndWithTrueConst
          added RequireExplicitPackage::ExceptForPragmata

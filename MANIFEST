@@ -7,6 +7,7 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
+lib/Perl/Critic/Policy/Lax/ProhibitEmptyQuotes/ExceptAsFallback.pm
 lib/Perl/Critic/Policy/Lax/ProhibitStringyEval/ExceptForRequire.pm
 lib/Perl/Critic/Policy/Lax/RequireEndWithTrueConst.pm
 lib/Perl/Critic/Policy/Lax/RequireExplicitPackage/ExceptForPragmata.pm
@@ -14,8 +15,9 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
-t/eval-require.t
+t/empty-after-or.t
 t/end-with-true.t
+t/eval-require.t
 t/pod-coverage.t
 t/pod.t
 t/use-before-pkg.t

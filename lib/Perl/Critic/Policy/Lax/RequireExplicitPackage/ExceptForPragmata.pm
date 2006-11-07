@@ -5,11 +5,11 @@ package Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata;
 
 =head1 NAME
 
-Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata;
+Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
@@ -34,7 +34,7 @@ L<Perl::Critic::Policy::Modules::RequireExplicitPackage>.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 my $EXPLANATION = 'Violates encapsulation';
 my $DESCRIPTION = 'Code (other than strict/warnings) not in explicit package';
