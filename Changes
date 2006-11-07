@@ -1,3 +1,7 @@
 
+0.002    2006-11-07
+         added RequireEndWithTrueConst
+         added RequireExplicitPackage::ExceptForPragmata
+
 0.001    2006-11-06
          initial release

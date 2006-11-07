@@ -1,11 +1,41 @@
-package Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire;
-
 use strict;
 use warnings;
+
+package Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire;
+
+=head1 NAME
+
+Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire
+
+=head1 VERSION
+
+version 0.002
+
+=head1 DESCRIPTION
+
+Sure, everybody sane agrees that stringy C<eval> is usually a bad thing, but
+sometimes you need it, and you don't want to have to stick a C<no critic> on
+the end, because dangit, what you are doing is I<just not wrong>!
+
+See, C<require> is busted.  You can't pass it a variable containing the name of
+a module and have it look through C<@INC>.  That has lead to this common idiom:
+
+  eval q{ require $module } or die $@;
+
+This policy acts just like BuiltinFunctions::ProhibitStringyEval, but makes an
+exception when the content of the string is PPI-parseable Perl that looks
+something like this:
+
+  require $module
+  require $module[2];
+  use $module (); 1;
+
+=cut
+
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = 0.001;
+our $VERSION = '0.002';
 
 my $DESCRIPTION = 'Expression form of "eval" for something other than require';
 my $EXPLANATION = <<'END_EXPLANATION';
@@ -73,29 +103,6 @@ sub violates {
 
 1;
 
-=head1 NAME
-
-Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire
-
-=head1 DESCRIPTION
-
-Sure, everybody sane agrees that stringy C<eval> is usually a bad thing, but
-sometimes you need it, and you don't want to have to stick a C<no critic> on
-the end, because dangit, what you are doing is I<just not wrong>!
-
-See, C<require> is busted.  You can't pass it a variable containing the name of
-a module and have it look through C<@INC>.  That has lead to this common idiom:
-
-  eval q{ require $module } or die $@;
-
-This policy acts just like BuiltinFunctions::ProhibitStringyEval, but makes an
-exception when the content of the string is PPI-parseable Perl that looks
-something like this:
-
-  require $module
-  require $module[2];
-  use $module (); 1;
-
 =head1 AUTHOR
 
 Ricardo SIGNES <rjbs@cpan.org>
@@ -104,7 +111,8 @@ Adapted from BuiltinFunctions::ProhibitStringyEval by Jeffrey Ryan Thalhammer
 
 =head1 COPYRIGHT
 
-This distribution is copyright 2006, Ricardo SIGNES.
+This code is copyright 2006, Ricardo SIGNES and Jeffrey Ryan
+Thalhammer.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
