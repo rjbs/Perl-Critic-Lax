@@ -1,4 +1,7 @@
 
+0.004    2006-11-08
+         fix typo docs, add lax theme
+
 0.003    2006-11-07
          added ProhibitEmptyQuotes::ExceptAsFallback
 

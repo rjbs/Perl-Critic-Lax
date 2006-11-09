@@ -20,7 +20,7 @@ the end, because dangit, what you are doing is I<just not wrong>!
 See, C<require> is busted.  You can't pass it a variable containing the name of
 a module and have it look through C<@INC>.  That has lead to this common idiom:
 
-  eval q{ require $module } or die $@;
+  eval qq{ require $module } or die $@;
 
 This policy acts just like BuiltinFunctions::ProhibitStringyEval, but makes an
 exception when the content of the string is PPI-parseable Perl that looks

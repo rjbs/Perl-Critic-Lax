@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::RequireEndWithTrueConst
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 
@@ -32,14 +32,14 @@ Patches welcome.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 my $DESCRIPTION = q{Module does not end with true constant};
 my $EXPLANATION = q{Must end with a recognizable true value};
 
-sub default_severity { return $SEVERITY_HIGH  }
-sub default_themes   { return  }
-sub applies_to       { return 'PPI::Document' }
+sub default_severity { $SEVERITY_HIGH  }
+sub default_themes   { qw(lax)         }
+sub applies_to       { 'PPI::Document' }
 
 sub violates {
   my ($self, $elem, $doc) = @_;

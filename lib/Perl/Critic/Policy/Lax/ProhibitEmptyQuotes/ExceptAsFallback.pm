@@ -28,16 +28,16 @@ quotes, except for the empty string when it follows the high-precedence "or" or 
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 my $DESCRIPTION = q{Quotes used with an empty string, and not as a fallback};
 my $EXPLANATION = "Unless you're using the ||'' idiom, use a quotish form.";
 
 my $empty_rx = qr{\A ["'] (\s*) ['"] \z}x;
 
-sub default_severity { return $SEVERITY_LOW       }
-sub default_themes   {                            }
-sub applies_to       { return 'PPI::Token::Quote' }
+sub default_severity { $SEVERITY_LOW       }
+sub default_themes   { qw(lax)             }
+sub applies_to       { 'PPI::Token::Quote' }
 
 sub violates {
   my ($self, $element, undef) = @_;
