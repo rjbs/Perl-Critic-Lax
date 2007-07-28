@@ -8,6 +8,7 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Perl/Critic/Lax.pm
+lib/Perl/Critic/Policy/Lax/ProhibitComplexMappings/LinesNotStatements.pm
 lib/Perl/Critic/Policy/Lax/ProhibitEmptyQuotes/ExceptAsFallback.pm
 lib/Perl/Critic/Policy/Lax/ProhibitStringyEval/ExceptForRequire.pm
 lib/Perl/Critic/Policy/Lax/RequireEndWithTrueConst.pm
@@ -19,6 +20,7 @@ README
 t/empty-after-or.t
 t/end-with-true.t
 t/eval-require.t
+t/map-linebreak.t
 t/pod-coverage.t
 t/pod.t
 t/use-before-pkg.t
