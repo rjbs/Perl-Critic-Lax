@@ -28,7 +28,7 @@ quotes, except for the empty string when it follows the high-precedence "or" or 
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.004';
+our $VERSION = '0.006';
 
 my $DESCRIPTION = q{Quotes used with an empty string, and not as a fallback};
 my $EXPLANATION = "Unless you're using the ||'' idiom, use a quotish form.";
@@ -63,8 +63,7 @@ Thalhammer
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006 Ricardo Signes and Jeffrey Ryan Thalhammer.  All rights
-reserved.
+Copyright (c) 2006 Ricardo Signes and Jeffrey Ryan Thalhammer.
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

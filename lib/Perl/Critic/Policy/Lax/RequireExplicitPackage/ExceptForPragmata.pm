@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata
 
 =head1 VERSION
 
-version 0.004
+version 0.006
 
 =head1 DESCRIPTION
 
@@ -34,7 +34,7 @@ L<Perl::Critic::Policy::Modules::RequireExplicitPackage>.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.004';
+our $VERSION = '0.006';
 
 my $EXPLANATION = 'Violates encapsulation';
 my $DESCRIPTION = 'Code (other than strict/warnings) not in explicit package';
@@ -110,8 +110,7 @@ Adapted from Modules::RequireExplicitPackage by Jeffrey Ryan Thalhammer.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006 Ricardo SIGNES and Jeffrey Ryan Thalhammer.  All rights
-reserved.
+Copyright (c) 2006 Ricardo SIGNES and Jeffrey Ryan Thalhammer.
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

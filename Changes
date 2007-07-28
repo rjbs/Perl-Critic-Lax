@@ -1,13 +1,16 @@
 
-0.004    2006-11-08
-         fix typo docs, add lax theme
+0.006     2007-07-27
+          added ProhibitComplexMappings::LinesNotStatements
 
-0.003    2006-11-07
-         added ProhibitEmptyQuotes::ExceptAsFallback
+0.005     2006-11-08
+          fix typo docs, add lax theme
 
-0.002    2006-11-07
-         added RequireEndWithTrueConst
-         added RequireExplicitPackage::ExceptForPragmata
+0.003     2006-11-07
+          added ProhibitEmptyQuotes::ExceptAsFallback
 
-0.001    2006-11-06
-         initial release
+0.002     2006-11-07
+          added RequireEndWithTrueConst
+          added RequireExplicitPackage::ExceptForPragmata
+
+0.001     2006-11-06
+          initial release

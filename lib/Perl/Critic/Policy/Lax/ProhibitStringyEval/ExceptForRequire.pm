@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire
 
 =head1 VERSION
 
-version 0.003
+version 0.006
 
 =head1 DESCRIPTION
 
@@ -35,7 +35,7 @@ something like this:
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.003';
+our $VERSION = '0.006';
 
 my $DESCRIPTION = 'Expression form of "eval" for something other than require';
 my $EXPLANATION = <<'END_EXPLANATION';
@@ -94,7 +94,6 @@ sub violates {
   return if not($arg) or $arg->isa('PPI::Structure::Block');
 
   # It's OK if the string we're evaluating is just "require $var"
-  # I should do THIS with PPI, too! -- rjbs, 2006-11-06
   return if $self->_arg_is_ok($arg);
 
   # Otherwise, you are in trouble.

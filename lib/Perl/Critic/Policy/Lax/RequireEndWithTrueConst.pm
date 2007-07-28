@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::RequireEndWithTrueConst
 
 =head1 VERSION
 
-version 0.004
+version 0.006
 
 =head1 DESCRIPTION
 
@@ -32,7 +32,7 @@ Patches welcome.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.004';
+our $VERSION = '0.006';
 
 my $DESCRIPTION = q{Module does not end with true constant};
 my $EXPLANATION = q{Must end with a recognizable true value};
@@ -110,8 +110,7 @@ Adapted from Module::RequireEndWithOne by Chris Dolan
 
 =head1 COPYRIGHT
 
-Copyright (c) 2006 Ricardo SIGNES, Chris Dolan, Jeffrey Ryan Thalhammer.  All
-rights reserved.
+Copyright (c) 2006 Ricardo SIGNES, Chris Dolan, Jeffrey Ryan Thalhammer.
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
