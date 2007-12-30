@@ -11,12 +11,14 @@ lib/Perl/Critic/Lax.pm
 lib/Perl/Critic/Policy/Lax/ProhibitComplexMappings/LinesNotStatements.pm
 lib/Perl/Critic/Policy/Lax/ProhibitEmptyQuotes/ExceptAsFallback.pm
 lib/Perl/Critic/Policy/Lax/ProhibitStringyEval/ExceptForRequire.pm
+lib/Perl/Critic/Policy/Lax/ProhibitLeadingZeros/ExceptChmod.pm
 lib/Perl/Critic/Policy/Lax/RequireEndWithTrueConst.pm
 lib/Perl/Critic/Policy/Lax/RequireExplicitPackage/ExceptForPragmata.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
+t/chmod-0xxx.t
 t/empty-after-or.t
 t/end-with-true.t
 t/eval-require.t
