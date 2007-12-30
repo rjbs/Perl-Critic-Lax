@@ -1,4 +1,7 @@
 
+0.007     2007-12-30
+          added ProhibitLeadingZeros::ExceptChmod
+
 0.006     2007-07-27
           added ProhibitComplexMappings::LinesNotStatements
 
