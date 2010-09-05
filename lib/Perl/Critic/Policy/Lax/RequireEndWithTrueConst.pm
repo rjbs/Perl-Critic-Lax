@@ -43,7 +43,7 @@ sub applies_to       { 'PPI::Document' }
 
 sub violates {
   my ($self, $elem, $doc) = @_;
-  return if is_script($doc); #Must be a library or module.
+  return if $doc->is_program; #Must be a library or module.
 
   # Last statement should be a true constant.
   my @significant = grep { _is_code($_) } $doc->schildren();
