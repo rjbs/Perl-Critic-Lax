@@ -24,7 +24,7 @@ This is not:
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 my $DESCRIPTION = q{Integer with leading zeros outside of chmod};
 my $EXPLANATION = "Only use leading zeros on numbers indicating file modes";

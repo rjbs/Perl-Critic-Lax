@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 
@@ -35,7 +35,7 @@ version.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 my $EXPLANATION = 'Violates encapsulation';
 my $DESCRIPTION = 'Code (other than strict/warnings) not in explicit package';

@@ -34,7 +34,7 @@ Seriously, people, they're called subroutines.  We've had them since Perl 3.
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 my $DESCRIPTION = q{The block given to map should fit on one line.};
 my $EXPLANATION = "If it doesn't fit on one line, turn it into a subroutine.";

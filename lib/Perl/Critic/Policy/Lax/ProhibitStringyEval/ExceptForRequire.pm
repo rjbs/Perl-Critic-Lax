@@ -9,7 +9,7 @@ Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 DESCRIPTION
 
@@ -35,7 +35,7 @@ something like this:
 use Perl::Critic::Utils;
 use base qw(Perl::Critic::Policy);
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 my $DESCRIPTION = 'Expression form of "eval" for something other than require';
 my $EXPLANATION = <<'END_EXPLANATION';
