@@ -1,11 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::ProhibitLeadingZeros::ExceptChmod;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::ProhibitLeadingZeros::ExceptChmod
+# ABSTRACT: leading zeroes are okay as the first arg to chmod
 
 =head1 DESCRIPTION
 
@@ -22,9 +18,7 @@ This is not:
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $DESCRIPTION = q{Integer with leading zeros outside of chmod};
 my $EXPLANATION = "Only use leading zeros on numbers indicating file modes";
@@ -50,24 +44,8 @@ sub violates {
 
     return if $working and ($working->children)[0] eq 'chmod';
   }
-    
+
   return $self->violation($DESCRIPTION, $EXPLANATION, $element);
 }
-
-=head1 AUTHOR
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from ValuesAndExpressions::ProhibitLeadingZeros by Jeffrey Ryan
-Thalhammer.
-
-=head1 COPYRIGHT
-
-Copyright (c) 2007 Ricardo Signes and Jeffrey Ryan Thalhammer.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut
 
 1;

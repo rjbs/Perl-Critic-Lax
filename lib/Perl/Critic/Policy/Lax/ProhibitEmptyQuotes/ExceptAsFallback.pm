@@ -1,11 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::ProhibitEmptyQuotes::ExceptAsFallback;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::ProhibitEmptyQuotes::ExceptAsFallback
+# ABSTRACT: empty quotes are okay as the fallback on the rhs of ||
 
 =head1 DESCRIPTION
 
@@ -26,9 +22,7 @@ quotes, except for the empty string when it follows the high-precedence "or" or 
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $DESCRIPTION = q{Quotes used with an empty string, and not as a fallback};
 my $EXPLANATION = "Unless you're using the ||'' idiom, use a quotish form.";
@@ -50,24 +44,8 @@ sub violates {
     return if $prev->isa('PPI::Token::Operator')
            && grep { $prev eq $_ } ('||', '//');
   }
-          
+
   return $self->violation($DESCRIPTION, $EXPLANATION, $element);
 }
-
-=head1 AUTHOR
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from ValuesAndExpressions::ProhibitEmptyQuotes by Jeffrey Ryan
-Thalhammer
-
-=head1 COPYRIGHT
-
-Copyright (c) 2006 Ricardo Signes and Jeffrey Ryan Thalhammer.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut
 
 1;

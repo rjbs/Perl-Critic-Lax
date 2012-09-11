@@ -1,15 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::RequireExplicitPackage::ExceptForPragmata
-
-=head1 VERSION
-
-version 0.008
+# ABSTRACT: you can put strict and warnings before "package"
 
 =head1 DESCRIPTION
 
@@ -28,14 +20,10 @@ those cases.  By default, it permits turning on strictures, warnings,
 features, and diagnostics, as well as requiring a minimum Perl
 version.
 
-=head1 METHODS
-
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $EXPLANATION = 'Violates encapsulation';
 my $DESCRIPTION = 'Code (other than strict/warnings) not in explicit package';
@@ -44,7 +32,7 @@ sub default_severity { $SEVERITY_HIGH  }
 sub default_themes   { qw( risky )     }
 sub applies_to       { 'PPI::Document' }
 
-=head2 supported_parameters
+=method supported_parameters
 
 The default list of pragmata that are permitted before a C<package>
 declaration can be changed via the C<allowed_pragmata> configuration
@@ -121,22 +109,3 @@ sub violates {
 }
 
 1;
-
-__END__
-
-=pod
-
-=head1 AUTHOR
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from Modules::RequireExplicitPackage by Jeffrey Ryan Thalhammer.
-
-=head1 COPYRIGHT
-
-Copyright (c) 2006 Ricardo SIGNES and Jeffrey Ryan Thalhammer.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut

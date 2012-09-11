@@ -1,15 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::ProhibitStringyEval::ExceptForRequire
-
-=head1 VERSION
-
-version 0.008
+# ABSTRACT: stringy eval is bad, but it's okay just to "require"
 
 =head1 DESCRIPTION
 
@@ -30,12 +22,12 @@ something like this:
   require $module[2];
   use $module (); 1;
 
+Then again, maybe you should use L<Module::Runtime>.
+
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $DESCRIPTION = 'Expression form of "eval" for something other than require';
 my $EXPLANATION = <<'END_EXPLANATION';
@@ -101,19 +93,3 @@ sub violates {
 }
 
 1;
-
-=head1 AUTHOR
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from BuiltinFunctions::ProhibitStringyEval by Jeffrey Ryan Thalhammer
-
-=head1 COPYRIGHT
-
-This code is copyright 2006, Ricardo SIGNES and Jeffrey Ryan
-Thalhammer.
-
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut

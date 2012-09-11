@@ -1,15 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::RequireEndWithTrueConst;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::RequireEndWithTrueConst
-
-=head1 VERSION
-
-version 0.008
+# ABSTRACT: ending your package with a simple, fun true value is okay
 
 =head1 DESCRIPTION
 
@@ -58,7 +50,7 @@ sub violates {
 
 sub _is_true_enough {
   my ($self, $element) = @_;
-  
+
   if ($element->isa('PPI::Statement::Break')) {
     my ($head, @tail) = $element->schildren;
     return unless $head eq 'return';
@@ -98,22 +90,3 @@ sub _is_code {
 }
 
 1;
-
-=pod
-
-=head1 AUTHOR
-
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from Module::RequireEndWithOne by Chris Dolan
-
-=head1 COPYRIGHT
-
-Copyright (c) 2006 Ricardo SIGNES, Chris Dolan, Jeffrey Ryan Thalhammer.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut
-

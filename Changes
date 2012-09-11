@@ -1,5 +1,8 @@
 Revision history for Perl-Critic-Lax
 
+{{$NEXT}}
+          repackage with Dist::Zilla, primarily to fix busted metadata
+
 0.008     2010-09-04
           update some policies for modern Perl-Critic
 

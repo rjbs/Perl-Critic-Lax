@@ -1,11 +1,7 @@
 use strict;
 use warnings;
-
 package Perl::Critic::Policy::Lax::ProhibitComplexMappings::LinesNotStatements;
-
-=head1 NAME
-
-Perl::Critic::Policy::Lax::ProhibitComplexMappings::LinesNotStatements
+# ABSTRACT: prohibit multiline maps, not multistatement maps
 
 =head1 DESCRIPTION
 
@@ -32,9 +28,7 @@ Seriously, people, they're called subroutines.  We've had them since Perl 3.
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $DESCRIPTION = q{The block given to map should fit on one line.};
 my $EXPLANATION = "If it doesn't fit on one line, turn it into a subroutine.";
@@ -74,20 +68,5 @@ sub violates {
   # more than one child statements
   return $self->violation($DESCRIPTION, $EXPLANATION, $element);
 }
-
-=head1 AUTHOR
-
-Ricardo SIGNES <rjbs@cpan.org>
-
-Adapted from BuiltinFunctions::ProhibitComplexMappings by Chris Dolan.
-
-=head1 COPYRIGHT
-
-Copyright (c) 2006 Ricardo Signes and Chris Dolan.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut
 
 1;
