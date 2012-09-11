@@ -22,9 +22,7 @@ Patches welcome.
 =cut
 
 use Perl::Critic::Utils;
-use base qw(Perl::Critic::Policy);
-
-our $VERSION = '0.008';
+use parent qw(Perl::Critic::Policy);
 
 my $DESCRIPTION = q{Module does not end with true constant};
 my $EXPLANATION = q{Must end with a recognizable true value};
