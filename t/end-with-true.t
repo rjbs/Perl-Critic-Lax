@@ -26,16 +26,16 @@ return "0e0";
 package Whatever;
 "This is your code on drugs.";
 },
+  q{
+package Whatever;
+return 0e0;
+},
 );
 
 my @todo_ok = (
   q{
 package Foo;
 return (0, 0, 0, 1);
-},
-  q{
-package Whatever;
-return 0e0;
 },
   q{
 package Foo;
