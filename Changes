@@ -1,6 +1,8 @@
 Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
+
+0.009     2012-09-11 10:55:34 America/New_York
           repackage with Dist::Zilla, primarily to fix busted metadata
 
 0.008     2010-09-04
