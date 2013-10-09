@@ -2,6 +2,9 @@ Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
 
+0.010     2013-10-09 17:09:16 America/New_York
+          update bugtracker and repo metadata
+
 0.009     2012-09-11 10:55:34 America/New_York
           repackage with Dist::Zilla, primarily to fix busted metadata
 
