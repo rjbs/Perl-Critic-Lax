@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use Perl::Critic::TestUtils qw(pcritique);
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 my @ok = (
   q{ eval "require $string" },
@@ -15,6 +15,7 @@ my @not_ok = (
   q{ eval "system 'rm -rf /'" },
   q{ eval "require $string; die" },
   q{ eval 'require $string'   },
+  q{ eval qq(#line 1 "code"\n1;); },
 );
 
 my $policy = 'Lax::ProhibitStringyEval::ExceptForRequire';

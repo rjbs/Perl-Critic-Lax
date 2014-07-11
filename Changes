@@ -1,6 +1,7 @@
 Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
+          avoid crashing when encountering unusual PPI documents
 
 0.010     2013-10-09 17:09:16 America/New_York
           update bugtracker and repo metadata

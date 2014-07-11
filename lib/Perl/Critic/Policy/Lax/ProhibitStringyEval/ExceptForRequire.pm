@@ -53,7 +53,8 @@ sub _arg_is_ok {
 
   # We only allow {require} and {require;number}
   return if @children > 2;
-  return unless $children[0]->isa('PPI::Statement::Include');
+  return unless defined $children[0]
+             && $children[0]->isa('PPI::Statement::Include');
 
   # We could give up if the Include's second child isn't a Symbol, but... eh!
 
