@@ -1,6 +1,8 @@
 Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
+
+0.011     2014-07-10 23:40:28-04:00 America/New_York
           avoid crashing when encountering unusual PPI documents
 
 0.010     2013-10-09 17:09:16 America/New_York
