@@ -1,6 +1,12 @@
 Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
+        - ProhibitLeadingZeros::ExceptChmod is now just an empty subclass of
+          ProhibitLeadingZeros, which has allowed leading zeroes on args to
+          chmod since 2008
+        - policy ValuesAndExpressions::RequireConstantOnLeftSideOfEquality has
+          been added to allow variables on the left side of `eq` (thanks,
+          Andreas Schröter!)
 
 0.011     2014-07-10 23:40:28-04:00 America/New_York
           avoid crashing when encountering unusual PPI documents
