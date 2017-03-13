@@ -2,6 +2,9 @@ Revision history for Perl-Critic-Lax
 
 {{$NEXT}}
 
+0.013     2017-03-13 08:34:05-04:00 America/New_York
+        - tiny doc change
+
 0.012     2016-08-24 22:47:46-04:00 America/New_York
         - ProhibitLeadingZeros::ExceptChmod is now just an empty subclass of
           ProhibitLeadingZeros, which has allowed leading zeroes on args to
