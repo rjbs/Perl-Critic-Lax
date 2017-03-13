@@ -6,7 +6,7 @@ package Perl::Critic::Policy::Lax::ProhibitComplexMappings::LinesNotStatements;
 =head1 DESCRIPTION
 
 Yes, yes, don't go nuts with map and use it to implement the complex multi-pass
-fnordsort algorithm.  But, come on, guys!  What's wrong with this:
+fnordsort algorithm.  But, come on, people!  What's wrong with this:
 
   my @localparts = map { my $addr = $_; $addr =~ s/\@.+//; $addr } @addresses;
 
